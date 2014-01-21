@@ -1,0 +1,26 @@
+package:
+  name: pytst
+  version: 1.18
+
+source:
+  fn: pytst-1.18.zip
+  url: https://github.com/nlehuen/pytst/archive/1.18.zip
+  md5: de091cf6a5b1fb4657841c384e96f67d
+
+build:
+  number: 1
+
+requirements:
+  build:
+    - chrpath
+    - python
+  run:
+    - python
+
+test:
+  imports:
+  - tst
+
+about:
+  home: https://github.com/nlehuen/pytst
+  license: MIT
