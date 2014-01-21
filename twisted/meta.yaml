@@ -1,0 +1,118 @@
+package:
+  name: twisted
+  version: !!str 11.1.0
+
+source:
+  fn: Twisted-11.1.0.tar.bz2
+  url: https://pypi.python.org/packages/source/T/Twisted/Twisted-11.1.0.tar.bz2
+  md5: 972f3497e6e19318c741bf2900ffe31c
+#  patches:
+   # List any patch files here
+   # - fix.patch
+
+# build:
+  #preserve_egg_dir: True
+  #entry_points:
+    # Put any entry points (scripts to be generated automatically) here. The
+    # syntax is module:function.  For example
+    #
+    # - twisted = twisted:main
+    #
+    # Would create an entry point called twisted that calls twisted.main()
+
+
+  # If this is a new build for the same version, increment the build
+  # number. If you do not include this key, it defaults to 0.
+  # number: 1
+
+requirements:
+  build:
+    - python
+
+  run:
+    - python
+    - zope.interface
+
+test:
+  # Python imports
+  imports:
+    - twisted.mail
+    - twisted.python.test
+    - twisted.web.test
+    - twisted.conch.ssh
+    - twisted.manhole
+    - twisted.internet.test
+    - twisted.protocols.mice
+    - twisted.conch
+    - twisted.words.protocols
+    - twisted.protocols
+    - twisted.application
+    - twisted.conch.scripts
+    - twisted.manhole.ui
+    - twisted.persisted
+    - twisted.words.test
+    - twisted.lore
+    - twisted.runner
+    - twisted.lore.test
+    - twisted.news.test
+    - twisted.trial
+    - twisted.lore.scripts
+    - twisted.spread
+    - twisted
+    - twisted.words
+    - twisted.scripts
+    - twisted.manhole.test
+    - twisted.words.im
+    - twisted.conch.openssh_compat
+    - twisted.enterprise
+    - twisted.conch.client
+    - twisted.mail.test
+    - twisted.protocols.test
+    - twisted.persisted.test
+    - twisted.scripts.test
+    - twisted.mail.scripts
+    - twisted.names.test
+    - twisted.pair
+    - twisted.words.xish
+    - twisted.conch.ui
+    - twisted.application.test
+    - twisted.trial.test
+    - twisted.web._auth
+    - twisted.spread.ui
+    - twisted.names
+    - twisted.manhole.ui.test
+    - twisted.test
+    - twisted.news
+    - twisted.pair.test
+    - twisted.cred
+    - twisted.protocols.gps
+    - twisted.persisted.journal
+    - twisted.runner.test
+    - twisted.plugins
+    - twisted.python
+    - twisted.words.protocols.jabber
+    - twisted.conch.test
+    - twisted.web
+    - twisted.internet
+    - twisted.tap
+    - twisted.conch.insults
+
+  #commands:
+    # You can put test commands to be run here.  Use this to test that the
+    # entry points work.
+
+
+  # You can also put a file called run_test.py in the recipe that will be run
+  # at test time.
+
+  # requires:
+    # Put any additional test requirements here.  For example
+    # - nose
+
+about:
+  home: http://twistedmatrix.com/
+  license: MIT
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml

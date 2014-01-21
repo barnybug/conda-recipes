@@ -1,0 +1,42 @@
+package:
+  name: formencode
+  version: 1.2.6
+
+source:
+  fn: FormEncode-1.2.6.zip
+  url: https://pypi.python.org/packages/source/F/FormEncode/FormEncode-1.2.6.zip
+  md5: c9d51fcfdaf5c2480963930ef0167575
+#  patches:
+   # List any patch files here
+   # - fix.patch
+
+# build:
+  #preserve_egg_dir: True
+  #entry_points:
+    # Put any entry points (scripts to be generated automatically) here. The
+    # syntax is module:function.  For example
+    #
+    # - sqlobject = sqlobject:main
+    #
+    # Would create an entry point called sqlobject that calls sqlobject.main()
+
+
+  # If this is a new build for the same version, increment the build
+  # number. If you do not include this key, it defaults to 0.
+  # number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+
+  run:
+    - python
+
+about:
+  home: http://formencode.org/
+  license: PSF
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml

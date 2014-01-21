@@ -1,0 +1,69 @@
+package:
+  name: requests
+  version: !!str 0.12.1
+
+source:
+  fn: requests-0.12.1.tar.gz
+  url: https://pypi.python.org/packages/source/r/requests/requests-0.12.1.tar.gz
+  md5: fe9e0515d09733d0eb9e2031c03401b2
+#  patches:
+   # List any patch files here
+   # - fix.patch
+
+# build:
+  #preserve_egg_dir: True
+  #entry_points:
+    # Put any entry points (scripts to be generated automatically) here. The
+    # syntax is module:function.  For example
+    #
+    # - requests = requests:main
+    #
+    # Would create an entry point called requests that calls requests.main()
+
+
+  # If this is a new build for the same version, increment the build
+  # number. If you do not include this key, it defaults to 0.
+  # number: 1
+
+requirements:
+  build:
+    - python
+    - certifi
+    - oauthlib
+    - chardet
+
+  run:
+    - python
+    - certifi
+    - oauthlib
+    - chardet
+
+test:
+  # Python imports
+  imports:
+    - requests.packages.urllib3.packages
+    - requests.packages.urllib3.packages.mimetools_choose_boundary
+    - requests
+    - requests.packages.urllib3
+    - requests.packages.urllib3.packages.ssl_match_hostname
+    - requests.packages
+
+  #commands:
+    # You can put test commands to be run here.  Use this to test that the
+    # entry points work.
+
+
+  # You can also put a file called run_test.py in the recipe that will be run
+  # at test time.
+
+  # requires:
+    # Put any additional test requirements here.  For example
+    # - nose
+
+about:
+  home: http://python-requests.org
+  license: C License (ISCL)
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml
