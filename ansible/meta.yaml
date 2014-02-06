@@ -1,0 +1,76 @@
+package:
+  name: ansible
+  version: !!str 1.4.4
+
+source:
+  fn: ansible-1.4.4.tar.gz
+  url: https://pypi.python.org/packages/source/a/ansible/ansible-1.4.4.tar.gz
+  md5: 305fefa24fa4f6c5a1d69287060b9b3d
+  patches:
+    - prefix.patch
+
+# build:
+  #preserve_egg_dir: True
+  #entry_points:
+    # Put any entry points (scripts to be generated automatically) here. The
+    # syntax is module:function.  For example
+    #
+    # - ansible = ansible:main
+    #
+    # Would create an entry point called ansible that calls ansible.main()
+
+
+  # If this is a new build for the same version, increment the build
+  # number. If you do not include this key, it defaults to 0.
+  # number: 1
+
+requirements:
+  build:
+    - python
+    - paramiko
+    - jinja2
+    - pyyaml
+    - httplib2
+
+  run:
+    - python
+    - paramiko
+    - jinja2
+    - pyyaml
+    - httplib2
+
+test:
+  # Python imports
+  imports:
+    - ansible.inventory.vars_plugins
+    - ansible.runner.action_plugins
+    - ansible.runner.connection_plugins
+    - ansible.runner
+    - ansible.runner.lookup_plugins
+    - ansible
+    - ansible.callback_plugins
+    - ansible.inventory
+    - ansible.runner.filter_plugins
+    - ansible.module_utils
+    - ansible.utils
+    - ansible.playbook
+
+  #commands:
+    # You can put test commands to be run here.  Use this to test that the
+    # entry points work.
+
+
+  # You can also put a file called run_test.py in the recipe that will be run
+  # at test time.
+
+  # requires:
+    # Put any additional test requirements here.  For example
+    # - nose
+
+about:
+  home: http://ansibleworks.com/
+  license: GPLv3
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml
