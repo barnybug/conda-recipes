@@ -1,11 +1,11 @@
 package:
   name: pyes
-  version: 0.19.1
+  version: 0.90.1
 
 source:
-  fn: pyes-0.19.1.tar.gz
-  url: https://pypi.python.org/packages/source/p/pyes/pyes-0.19.1.tar.gz
-  md5: 493131171d5cc0f32cb480a875c85b3a
+  fn: pyes-0.90.1.tar.gz
+  url: https://pypi.python.org/packages/source/p/pyes/pyes-0.90.1.tar.gz
+  md5: b54f76837b14fc76ba7b125badb8d5fc
 #  patches:
    # List any patch files here
    # - fix.patch
@@ -32,6 +32,7 @@ requirements:
     - python
     - setuptools
     - urllib3
+    - six
 
   run:
     - python
