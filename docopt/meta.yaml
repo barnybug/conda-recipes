@@ -1,13 +1,14 @@
 package:
-  name: ansible
-  version: 1.7.1
+  name: docopt
+  version: !!str 0.6.1
 
 source:
-  fn: ansible-1.7.1.tar.gz
-  url: https://pypi.python.org/packages/source/a/ansible/ansible-1.7.1.tar.gz
-  md5: 611334dd66f3b7fd31938e1c1dd3e3a2
-  patches:
-    - prefix.patch
+  fn: docopt-0.6.1.tar.gz
+  url: https://pypi.python.org/packages/source/d/docopt/docopt-0.6.1.tar.gz
+  md5: fe36e9b7a1708a0b02a115f2a78cf623
+#  patches:
+   # List any patch files here
+   # - fix.patch
 
 # build:
   #preserve_egg_dir: True
@@ -15,9 +16,9 @@ source:
     # Put any entry points (scripts to be generated automatically) here. The
     # syntax is module:function.  For example
     #
-    # - ansible = ansible:main
+    # - docopt = docopt:main
     #
-    # Would create an entry point called ansible that calls ansible.main()
+    # Would create an entry point called docopt that calls docopt.main()
 
 
   # If this is a new build for the same version, increment the build
@@ -27,33 +28,15 @@ source:
 requirements:
   build:
     - python
-    - paramiko
-    - jinja2
-    - pyyaml
-    - httplib2
+    - setuptools
 
   run:
     - python
-    - paramiko
-    - jinja2
-    - pyyaml
-    - httplib2
 
 test:
   # Python imports
   imports:
-    - ansible.inventory.vars_plugins
-    - ansible.runner.action_plugins
-    - ansible.runner.connection_plugins
-    - ansible.runner
-    - ansible.runner.lookup_plugins
-    - ansible
-    - ansible.callback_plugins
-    - ansible.inventory
-    - ansible.runner.filter_plugins
-    - ansible.module_utils
-    - ansible.utils
-    - ansible.playbook
+    - docopt
 
   #commands:
     # You can put test commands to be run here.  Use this to test that the
@@ -68,8 +51,9 @@ test:
     # - nose
 
 about:
-  home: http://ansibleworks.com/
-  license: GPLv3
+  home: http://docopt.org
+  license:  MIT License
+  summary: 'Pythonic argument parser, that will make you smile'
 
 # See
 # http://docs.continuum.io/conda/build.html for

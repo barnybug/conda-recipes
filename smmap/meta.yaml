@@ -1,13 +1,14 @@
 package:
-  name: ansible
-  version: 1.7.1
+  name: smmap
+  version: !!str 0.8.2
 
 source:
-  fn: ansible-1.7.1.tar.gz
-  url: https://pypi.python.org/packages/source/a/ansible/ansible-1.7.1.tar.gz
-  md5: 611334dd66f3b7fd31938e1c1dd3e3a2
-  patches:
-    - prefix.patch
+  fn: smmap-0.8.2.tar.gz
+  url: https://pypi.python.org/packages/source/s/smmap/smmap-0.8.2.tar.gz
+  md5: f5426b7626ddcf5e447253fae0396b0c
+#  patches:
+   # List any patch files here
+   # - fix.patch
 
 # build:
   #preserve_egg_dir: True
@@ -15,9 +16,9 @@ source:
     # Put any entry points (scripts to be generated automatically) here. The
     # syntax is module:function.  For example
     #
-    # - ansible = ansible:main
+    # - smmap = smmap:main
     #
-    # Would create an entry point called ansible that calls ansible.main()
+    # Would create an entry point called smmap that calls smmap.main()
 
 
   # If this is a new build for the same version, increment the build
@@ -27,33 +28,16 @@ source:
 requirements:
   build:
     - python
-    - paramiko
-    - jinja2
-    - pyyaml
-    - httplib2
+    - setuptools
 
   run:
     - python
-    - paramiko
-    - jinja2
-    - pyyaml
-    - httplib2
 
 test:
   # Python imports
   imports:
-    - ansible.inventory.vars_plugins
-    - ansible.runner.action_plugins
-    - ansible.runner.connection_plugins
-    - ansible.runner
-    - ansible.runner.lookup_plugins
-    - ansible
-    - ansible.callback_plugins
-    - ansible.inventory
-    - ansible.runner.filter_plugins
-    - ansible.module_utils
-    - ansible.utils
-    - ansible.playbook
+    - smmap
+    - smmap.test
 
   #commands:
     # You can put test commands to be run here.  Use this to test that the
@@ -68,8 +52,9 @@ test:
     # - nose
 
 about:
-  home: http://ansibleworks.com/
-  license: GPLv3
+  home: https://github.com/Byron/smmap
+  license:  BSD License
+  summary: 'A pure git implementation of a sliding window memory map manager'
 
 # See
 # http://docs.continuum.io/conda/build.html for
