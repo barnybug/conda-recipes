@@ -1,11 +1,11 @@
 package:
   name: docker-py
-  version: !!str 0.2.3
+  version: !!str 0.5.3
 
 source:
-  fn: docker-py-0.2.3.tar.gz
-  url: https://pypi.python.org/packages/source/d/docker-py/docker-py-0.2.3.tar.gz
-  md5: b6f8b5aec30d1b2eb8b47d1c0e087cee
+  fn: docker-py-0.5.3.tar.gz
+  url: https://pypi.python.org/packages/source/d/docker-py/docker-py-0.5.3.tar.gz
+  md5: 809b7b8c144f5e37787e72b030ee353f
 #  patches:
    # List any patch files here
    # - fix.patch
@@ -29,22 +29,24 @@ requirements:
   build:
     - python
     - setuptools
-    - mock
-    - requests
-    - six
-    - websocket-client
+    - requests >=2.2.1
+    - six >=1.3.0
+    - websocket-client >=0.11.0
 
   run:
     - python
-    - mock
-    - requests
-    - six
-    - websocket-client
+    - requests >=2.2.1
+    - six >=1.3.0
+    - websocket-client >=0.11.0
 
 test:
   # Python imports
   imports:
     - docker
+    - docker.auth
+    - docker.ssladapter
+    - docker.unixconn
+    - docker.utils
 
   #commands:
     # You can put test commands to be run here.  Use this to test that the
@@ -60,7 +62,8 @@ test:
 
 about:
   home: UNKNOWN
-  license: ache Software License
+  license:  Apache Software License
+  summary: 'Python client for Docker.'
 
 # See
 # http://docs.continuum.io/conda/build.html for
